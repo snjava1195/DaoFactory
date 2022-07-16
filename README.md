@@ -36,7 +36,7 @@
 	$ tvm_linker compile Platform.code -o Platform.tvc
   
 	$ tvm_linker decode --tvc DaoFactory.tvc
-		output: 
+		- output: 
 			Decoded:
 			StateInit
 			 split_depth: None
