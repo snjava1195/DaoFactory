@@ -3,26 +3,28 @@
 # Steps for setting up environment and deploying DaoFactory
 
 1.$ tonos-cli config --url main.ton.dev 
-    - set up a network
+	- set up a network
 
 2. $ solc DaoFactory.sol
-	output: $ Code was generated and saved to file DaoFactory.code
-		  ABI was generated and saved to file DaoFactory.abi.json
+	- output: 
+		- Code was generated and saved to file DaoFactory.code
+		- ABI was generated and saved to file DaoFactory.abi.json
       
 3. $ tvm_linker compile DaoFactory.code -o DaoFactory.tvc
-	output: ABI_PATH (obtained from INPUT): DaoFactory.abi.json
-	        TVM_LINKER_LIB_PATH: "/home/visnja/TON-Solidity-Compiler/lib/stdlib_sol.tvm"
-	        Contract successfully compiled. Saved to file DaoFactory.tvc.
-	        Contract address: 9e3726423e9c93911c6a61e1de2b64839c59be39428f4815cf6fbb65eacaf2e9
+	- output: 
+		- ABI_PATH (obtained from INPUT): DaoFactory.abi.json
+		- TVM_LINKER_LIB_PATH: "/home/visnja/TON-Solidity-Compiler/lib/stdlib_sol.tvm"
+		- Contract successfully compiled. Saved to file DaoFactory.tvc.
+		- Contract address: 9e3726423e9c93911c6a61e1de2b64839c59be39428f4815cf6fbb65eacaf2e9
           
 4. $ tonos-cli genaddr --genkey key.json --wc 0 DaoFactory.tvc --abi DaoFactory.abi.json
-	- with genaddr command you will get the  raw address of the contract - address of the contract after deploy 
+	- With genaddr command you will get the  raw address of the contract - address of the contract after deploy 
   
 5. $ tonos-cli deploy --sign key.json --wc 0 --abi DaoFactory.abi.json DaoFactory.tvc {}
-	output: Deploying...
-		MessageId: c5d56dc61b72926b2ade168fdd6f5b16e9bf48a2bc4033b636d55af51e3d6afe
-		Transaction succeeded.
-		Contract deployed at address: 				0:738aaa39514f542b69239acfa2134d8f6f62d1191e6ac053a8a690610afe480d
+	- output: Deploying...
+		- MessageId: c5d56dc61b72926b2ade168fdd6f5b16e9bf48a2bc4033b636d55af51e3d6afe
+		- Transaction succeeded.
+		- Contract deployed at address:  0:738aaa39514f542b69239acfa2134d8f6f62d1191e6ac053a8a690610afe480d
 		
     
 # DaoRoot deploying steps
@@ -53,20 +55,31 @@
 # In the next steps, ever.bytie.moe/executor is being used
 
 2. DaoFactory contract address input
+
  ![image_2022_07_16T09_39_04_358Z](https://user-images.githubusercontent.com/32481282/179352007-51d607c4-a319-46da-945a-91ffb3fe45e7.png)
  
+ 
 3. Load DaoFactory.abi.json file by clicking on 'From file' button
+
  ![image_2022_07_16T09_40_01_816Z](https://user-images.githubusercontent.com/32481282/179352107-4ee02706-7e1b-4444-a725-790ad0d1fa92.png)
 
+
 4. DaoFactory contract overview
+
 ![image_2022_07_16T09_41_24_043Z](https://user-images.githubusercontent.com/32481282/179352160-7a374df9-0d75-4ee1-90d9-c8e265077db7.png)
 
+
 5. By choosing 'deploy' function in the previous image, fill the neccessary parameters
+
 ![image_2022_07_16T09_42_19_201Z](https://user-images.githubusercontent.com/32481282/179352224-f6760c2b-82a8-4463-8cfc-1613b8cd041a.png)
 
+
 6. After filling neccessary input fields, click one of the options to deploy DaoRoot
+
 ![image_2022_07_16T09_42_50_822Z](https://user-images.githubusercontent.com/32481282/179352283-5a62bf31-d31d-48e4-8016-64524a9372fd.png)
 
+
 7. Output after choosing 'Send external' option
+
 ![image_2022_07_16T09_44_25_261Z](https://user-images.githubusercontent.com/32481282/179352324-967cc633-d69b-4389-a43c-adf6b8bbd08a.png)
 
